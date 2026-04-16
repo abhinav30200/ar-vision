@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#000000"
+    tools:context=".MainActivity">
+
+    <!-- The live feed image (processed) -->
+    <ImageView
+        android:id="@+id/processedView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!-- FPS Counter -->
+    <TextView
+        android:id="@+id/fpsCounter"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:text="FPS: 0"
+        android:textColor="#00FF00"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:shadowColor="#000000"
+        android:shadowDx="2"
+        android:shadowDy="2"
+        android:shadowRadius="2"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintRight_toRightOf="parent" />
+
+    <!-- Zoom Label -->
+    <TextView
+        android:id="@+id/zoomLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="1x"
+        android:textColor="#FFFFFF"
+        android:textSize="42sp"
+        android:textStyle="bold"
+        android:layout_marginBottom="24dp"
+        android:shadowColor="#000000"
+        android:shadowDx="3"
+        android:shadowDy="3"
+        android:shadowRadius="4"
+        app:layout_constraintBottom_toTopOf="@+id/controlsLayout"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent" />
+
+    <!-- Controls Overlay -->
+    <LinearLayout
+        android:id="@+id/controlsLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginBottom="48dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent">
+
+        <Button
+            android:id="@+id/btnZoomOut"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:text="-"
+            android:textSize="32sp"
+            android:layout_marginEnd="20dp"
+            android:backgroundTint="#444444" />
+
+        <Button
+            android:id="@+id/btnZoomIn"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:text="+"
+            android:textSize="32sp"
+            android:layout_marginStart="20dp"
+            android:backgroundTint="#444444" />
+
+    </LinearLayout>
+
+    <!-- Bonus Feature Toggle -->
+    <ToggleButton
+        android:id="@+id/toggleEdgeMode"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:textOff="Edge Off"
+        android:textOn="Edge On"
+        android:textColor="#FFFFFF"
+        android:backgroundTint="#88000000"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
